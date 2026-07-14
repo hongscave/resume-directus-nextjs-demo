@@ -12,6 +12,12 @@ if (!DIRECTUS_URL) {
   throw new Error('DIRECTUS_URL environment variable is required');
 }
 
-const directus = createDirectus<Schema>(DIRECTUS_URL).with(rest());
+const fetchWithTimeout: typeof globalThis.fetch = (input, init) => {
+  return globalThis.fetch(input, { ...init, signal: AbortSignal.timeout(15000) });
+};
+
+const directus = createDirectus<Schema>(DIRECTUS_URL, {
+  globals: { fetch: fetchWithTimeout },
+}).with(rest());
 
 export default directus;
