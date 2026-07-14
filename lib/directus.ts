@@ -6,7 +6,11 @@ interface Schema {
   jobs: Job[];
 }
 
-const DIRECTUS_URL = process.env.DIRECTUS_URL!;
+const DIRECTUS_URL = process.env.DIRECTUS_URL;
+
+if (!DIRECTUS_URL) {
+  throw new Error('DIRECTUS_URL environment variable is required');
+}
 
 const fetchWithTimeout: typeof globalThis.fetch = (input, init) => {
   return globalThis.fetch(input, { ...init, signal: AbortSignal.timeout(5000) });
