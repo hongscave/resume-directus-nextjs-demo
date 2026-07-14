@@ -6,8 +6,14 @@ interface Schema {
   jobs: Job[];
 }
 
-const DIRECTUS_URL = process.env.DIRECTUS_URL!; 
+const DIRECTUS_URL = process.env.DIRECTUS_URL!;
 
-const directus = createDirectus<Schema>(DIRECTUS_URL).with(rest());
+const fetchWithTimeout: typeof globalThis.fetch = (input, init) => {
+  return globalThis.fetch(input, { ...init, signal: AbortSignal.timeout(5000) });
+};
+
+const directus = createDirectus<Schema>(DIRECTUS_URL, {
+  globals: { fetch: fetchWithTimeout },
+}).with(rest());
 
 export default directus;
