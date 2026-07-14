@@ -1,6 +1,5 @@
 import { readItems } from '@directus/sdk';
 import { Suspense } from 'react';
-import { connection } from 'next/server';
 import directus from '@/lib/directus';
 import AuthorCard from '@/components/AuthorCard';
 import ProjectCard from '@/components/ProjectCard';
@@ -8,8 +7,9 @@ import JobCard from '@/components/JobCard';
 import { Project, Job } from '@/lib/types';
 import RevealEmail from '@/components/RevealEmail';
 
+export const dynamic = 'force-dynamic';
+
 async function ProjectsList() {
-  await connection();
   let allProjects: Project[] = [];
 
   try {
@@ -19,8 +19,9 @@ async function ProjectsList() {
         sort: ['-publishedDate'],
       })
     );
-  } catch {
+  } catch(error) {
     // fall through
+    console.log(error)
   }
 
   return (
@@ -36,7 +37,6 @@ async function ProjectsList() {
 }
 
 async function ExperienceList() {
-  await connection();
   let allJobs: Job[] = [];
 
   try {
@@ -46,8 +46,9 @@ async function ExperienceList() {
         sort: ['-startDate'],
       })
     );
-  } catch {
+  } catch(error) {
     // fall through
+    console.log(error)
   }
 
   return (
