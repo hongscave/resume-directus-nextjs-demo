@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hong Cheung Resume",
-  description: "Created by himself",
+  title: `${process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name'} — ${process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer'}`,
+  description: process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '',
 };
 
 export default function RootLayout({
@@ -27,8 +28,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <Header />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
