@@ -6,11 +6,7 @@ export async function GET(
 ) {
   const { id } = await params;
 
-  const response = await fetch(`${process.env.DIRECTUS_URL}/assets/${id}`, {
-    headers: {
-      Authorization: `Bearer ${process.env.DIRECTUS_TOKEN}`,
-    },
-  });
+  const response = await fetch(`${process.env.DIRECTUS_URL}/assets/${id}`);
 
   if (!response.ok) {
     return new NextResponse(null, { status: response.status });
