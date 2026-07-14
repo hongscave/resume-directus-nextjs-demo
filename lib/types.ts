@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   tags: string[];
   description: string;
-  urls: Record<string, string>;
+  urls: Record<string, string> | null;
   website: string | null;
   img: string | null;
 }
