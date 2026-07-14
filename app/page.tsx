@@ -1,11 +1,33 @@
-import Image from "next/image";
+// lib/directus.ts (Extended version)
+import { readItems, readItem } from '@directus/sdk';
+import directus from '@/lib/directus';
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        
-      </main>
-    </div>
+// Optional: Helper functions for common queries
+export async function getProjects() {
+  return directus.request(
+    readItems('projects', {
+      sort: ['-publishedDate'],
+    })
   );
 }
+
+export async function getJobs() {
+  return directus.request(
+    readItems('jobs', {
+      sort: ['-startDate'],
+    })
+  );
+}
+
+const allProjects = await getProjects();
+const allJobs = await getJobs();
+
+function HomePage() {
+  return (
+    <div>
+      hi
+    </div>
+  )
+}
+
+export default HomePage;

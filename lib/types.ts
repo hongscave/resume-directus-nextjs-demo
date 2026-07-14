@@ -1,17 +1,17 @@
 export interface Project {
-  id: string; // UUID
-  publishedDate: Date;
+  id: string;
+  publishedDate: string;
   title: string;
   tags: string[];
   description: string;
-  urls: Record<string, string>; // android, app store, website
+  urls: Record<string, string>;
   website: string | null;
 }
 
 export interface Job {
   id: string;
-  startDate: Date;
-  finishDate: Date | null; // null means current
+  startDate: string;
+  finishDate: string | null;
   title: string;
   companyName: string;
   description: string;
