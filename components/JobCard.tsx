@@ -10,16 +10,16 @@ function formatDate(dateStr: string | null): string {
 
 const JobCard = ({ job }: { job: Job }) => {
   return (
-    <li className="mb-10 ms-4">
-      <div className="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -start-1.5 border border-gray-200 dark:border-gray-600" />
-      <time className="text-sm font-normal leading-none ">
+    <li className="mb-10 ms-6">
+      <div className="absolute w-3 h-3 bg-muted rounded-full mt-1.5 -start-1.5 border-2 border-surface" />
+      <time className="text-sm text-muted">
         {formatDate(job.startDate)} — {formatDate(job.finishDate)}
       </time>
-      <h3 className="text-lg font-semibold  my-2">
-        {job.title} · {job.companyName}
+      <h3 className="text-lg font-semibold mt-2">
+        {job.title} <span className="text-muted">·</span> <span className="text-muted">{job.companyName}</span>
       </h3>
-      <p className="mb-4 text-base font-normal ">{job.description}</p>
-      <span className="inline-flex items-center text-sm px-3 py-1 ">
+      <p className="mt-2 text-base leading-relaxed">{job.description}</p>
+      <span className="inline-flex items-center mt-3 text-sm text-muted">
         {job.location}
       </span>
     </li>
