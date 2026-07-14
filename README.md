@@ -1,5 +1,8 @@
-# Disclaimer
-Feel free to use.
+# This Repo Is Currently Work In Progress
+
+## Disclaimer
+- This resume is built because I want to apply for jobs.  It is not optimised but will be.
+- Feel free to use.
 
 # Demo for a Single Page Developer Resume Using Directus + Nextjs + Typescript
 This is a demostration of my understanding for the fundamentals.
@@ -8,6 +11,7 @@ This is a demostration of my understanding for the fundamentals.
 Nextjs
 Typescript
 Directus
+(KiloCode)
 
 ## Initial Setup
 - Run the script /setup/directus-collections.sh to create the collections with defined schema on Directus.  Or, you can create them via Directus GUI
