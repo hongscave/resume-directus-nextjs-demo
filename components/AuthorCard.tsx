@@ -43,6 +43,7 @@ const socialLinks = [
 
 export default function AuthorCard() {
   const name = process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name'
+  const fullName = process.env.NEXT_PUBLIC_AUTHOR_FULLNAME ?? name
   const title = process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer'
   const bio = process.env.NEXT_PUBLIC_AUTHOR_BIO ?? ''
   const avatar = process.env.NEXT_PUBLIC_AUTHOR_AVATAR
@@ -64,8 +65,11 @@ export default function AuthorCard() {
         )}
       </div>
       <div className="text-center sm:text-left flex-1">
-        <div className="flex items-center justify-center sm:justify-start gap-3">
+        <div className="flex flex-col items-center sm:items-start">
           <h1 className="text-3xl font-bold tracking-tight">{name}</h1>
+          {fullName !== name && (
+            <span className="text-sm text-muted mt-0.5">{fullName}</span>
+          )}
         </div>
         <nav aria-label="Social links" className="flex items-center justify-center sm:justify-start gap-0.5 mt-2">
           {socialLinks.map(({ href, icon, label }) => (

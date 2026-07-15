@@ -17,11 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 const authorName = process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name';
+const authorFullName = process.env.NEXT_PUBLIC_AUTHOR_FULLNAME ?? authorName;
 const authorTitle = process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer';
 const authorBio = process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '';
 const authorAvatar = process.env.NEXT_PUBLIC_AUTHOR_AVATAR;
 
-const title = `${authorName} — ${authorTitle}`;
+const title = `${authorFullName} — ${authorTitle}`;
 
 export const metadata: Metadata = {
   title,
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     title,
     description: authorBio,
     url: 'https://hongcheung.com',
-    siteName: authorName,
+    siteName: authorFullName,
     images: authorAvatar
       ? [{ url: authorAvatar, width: 800, height: 800 }]
       : [],
