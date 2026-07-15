@@ -1,5 +1,7 @@
 # Demo Single Page Developer Resume Using Directus + Nextjs + Typescript
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ## Disclaimer
 - This repo is a work-in-progress.
 - This resume is built because I need a digital resume to apply for jobs.
