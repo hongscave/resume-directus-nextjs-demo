@@ -139,6 +139,19 @@ curl -s -X POST "$BASE/collections" \
         "schema": {
           "is_nullable": true
         }
+      },
+      {
+        "field": "img",
+        "type": "uuid",
+        "meta": {
+          "interface": "file-image",
+          "sort": 9,
+          "width": "full",
+          "note": "Project thumbnail image"
+        },
+        "schema": {
+          "is_nullable": true
+        }
       }
     ]
   }' | python3 -m json.tool
