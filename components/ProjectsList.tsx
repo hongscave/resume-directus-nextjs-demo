@@ -22,8 +22,8 @@ export async function ProjectsList() {
       {allProjects.length === 0 && (
         <p className="text-muted text-sm">No projects yet.</p>
       )}
-      {allProjects.map((project, i) => (
-        <ProjectCard key={project.id} project={project} priority={i === 0} />
+      {allProjects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
       ))}
     </>
   );
