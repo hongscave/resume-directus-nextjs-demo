@@ -12,7 +12,7 @@ const JobCard = ({ job }: { job: Job }) => {
   return (
     <li className="mb-10 ms-6">
       <div className="absolute w-3 h-3 bg-muted rounded-full mt-1.5 -start-1.5 border-2 border-surface" />
-      <time className="text-sm text-muted">
+      <time dateTime={job.startDate} className="text-sm text-muted">
         {formatDate(job.startDate)} — {formatDate(job.finishDate)}
       </time>
       <h3 className="text-lg font-semibold mt-2">

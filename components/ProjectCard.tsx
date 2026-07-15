@@ -30,7 +30,7 @@ const ProjectCard = ({ project, priority = false }: { project: Project; priority
         <div className="flex items-start justify-between gap-2">
           <h3 className="text-lg font-semibold leading-snug">{project.title}</h3>
         </div>
-        <p className="text-sm text-subtle">{project.publishedDate}</p>
+        <time dateTime={project.publishedDate} className="text-sm text-subtle">{project.publishedDate}</time>
         <p className="text-base leading-relaxed">{project.description}</p>
         {project.website && (
           <a
