@@ -8,8 +8,31 @@ import { SkillsList } from '@/components/SkillsList';
 export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
+  const allSkills = [
+    "React Native (Expo)", "CloudFlare", "TailwindCSS", "Nextjs", "SwiftUI",
+    "VPS", "Hetzner", "Docker", "SSG", "Astro", "Express.js", "Flask",
+    "Javascript", "Typescript", "AI coding", "Tailscale", "CloudFlare Tunnel",
+    "Self-Hosting", "People Skill", "Big Picture Thinking", "Self-Driven",
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name',
+    description: process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '',
+    url: 'https://hongcheung.com',
+    image: process.env.NEXT_PUBLIC_AUTHOR_AVATAR,
+    sameAs: ['https://bsky.app/profile/hongcheung.com'],
+    jobTitle: process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer',
+    knowsAbout: allSkills,
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <AuthorCard />
       <GetInTouchButton />
 
