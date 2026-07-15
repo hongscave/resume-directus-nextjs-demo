@@ -6,3 +6,10 @@ export const authorConfig = {
   avatar: 'https://hongcheung.com/avatar.png',
   initials: 'HC',
 } as const;
+
+export const allSkills = [
+  "React Native (Expo)", "CloudFlare", "TailwindCSS", "Nextjs", "SwiftUI",
+  "VPS", "Hetzner", "Docker", "SSG", "Astro", "Express.js", "Flask",
+  "Javascript", "Typescript", "AI coding", "Tailscale", "CloudFlare Tunnel",
+  "Self-Hosting", "People Skill", "Big Picture Thinking", "Self-Driven",
+] as const;

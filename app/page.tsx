@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { authorConfig } from '@/lib/author';
+import { authorConfig, allSkills } from '@/lib/author';
 import AuthorCard from '@/components/AuthorCard';
 import GetInTouchButton from '@/components/GetInTouchButton';
 import { ProjectsList, ProjectsSkeleton } from '@/components/ProjectsList';
@@ -9,13 +9,6 @@ import { SkillsList } from '@/components/SkillsList';
 export const revalidate = 3600;
 
 export default function HomePage() {
-  const allSkills = [
-    "React Native (Expo)", "CloudFlare", "TailwindCSS", "Nextjs", "SwiftUI",
-    "VPS", "Hetzner", "Docker", "SSG", "Astro", "Express.js", "Flask",
-    "Javascript", "Typescript", "AI coding", "Tailscale", "CloudFlare Tunnel",
-    "Self-Hosting", "People Skill", "Big Picture Thinking", "Self-Driven",
-  ];
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
