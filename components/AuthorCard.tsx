@@ -80,6 +80,15 @@ export default function AuthorCard() {
               {icon}
             </a>
           ))}
+          <a
+            href="https://hongcheung.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Website"
+            className="p-2 rounded-md text-muted hover:text-foreground hover:bg-surface-hover transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            <GlobeIcon />
+          </a>
           <RevealEmail
             className="p-2 rounded-md text-muted hover:text-foreground hover:bg-surface-hover transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
