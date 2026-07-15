@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { authorConfig } from '@/lib/author';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,11 +17,11 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const authorName = process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name';
-const authorFullName = process.env.NEXT_PUBLIC_AUTHOR_FULLNAME ?? authorName;
-const authorTitle = process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer';
-const authorBio = process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '';
-const authorAvatar = process.env.NEXT_PUBLIC_AUTHOR_AVATAR;
+const authorName = authorConfig.name;
+const authorFullName = authorConfig.fullName;
+const authorTitle = authorConfig.title;
+const authorBio = authorConfig.bio;
+const authorAvatar = authorConfig.avatar;
 
 const title = `${authorFullName} — ${authorTitle}`;
 

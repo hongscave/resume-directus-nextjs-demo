@@ -1,7 +1,8 @@
 'use client'
+import { authorConfig } from '@/lib/author';
 import ThemeToggle from './ThemeToggle'
 
-const authorName = process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name'
+const authorName = authorConfig.name;
 
 export default function Header() {
   return (

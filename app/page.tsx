@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { authorConfig } from '@/lib/author';
 import AuthorCard from '@/components/AuthorCard';
 import GetInTouchButton from '@/components/GetInTouchButton';
 import { ProjectsList, ProjectsSkeleton } from '@/components/ProjectsList';
@@ -18,12 +19,12 @@ export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name',
-    description: process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '',
+    name: authorConfig.name,
+    description: authorConfig.bio,
     url: 'https://hongcheung.com',
-    image: process.env.NEXT_PUBLIC_AUTHOR_AVATAR,
+    image: authorConfig.avatar,
     sameAs: ['https://bsky.app/profile/hongcheung.com'],
-    jobTitle: process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer',
+    jobTitle: authorConfig.title,
     knowsAbout: allSkills,
   };
 

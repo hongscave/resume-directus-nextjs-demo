@@ -3,10 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Disclaimer
-- This repo is a work-in-progress.
 - This resume is built because I need a digital resume to apply for jobs.
-- It is not optimised but it will be.
-- Feel free to use.
+- It will be further improved.
 
 ## Backbone
 Nextjs
@@ -15,6 +13,8 @@ Directus
 (KiloCode)
 
 ## Initial Setup
+- Set the environment variables in .env
+- Update the author.ts to your liking.
 - Run the script /setup/directus-collections.sh to create the collections with defined schema on Directus.  Or, you can create them via Directus web GUI.
 
 ## Caveats
