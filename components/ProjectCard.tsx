@@ -22,6 +22,7 @@ const ProjectCard = ({ project, priority = false }: { project: Project; priority
             fill
             sizes="(max-width: 640px) 100vw, 112px"
             priority={priority}
+            unoptimized
             className="object-cover"
           />
         </div>

@@ -6,7 +6,12 @@ export async function GET(
 ) {
   const { id } = await params;
 
-  const response = await fetch(`${process.env.DIRECTUS_URL}/assets/${id}`);
+  const headers: HeadersInit = {};
+  if (process.env.DIRECTUS_TOKEN) {
+    headers['Authorization'] = `Bearer ${process.env.DIRECTUS_TOKEN}`;
+  }
+
+  const response = await fetch(`${process.env.DIRECTUS_URL}/assets/${id}`, { headers });
 
   if (!response.ok) {
     return new NextResponse(null, { status: response.status });
