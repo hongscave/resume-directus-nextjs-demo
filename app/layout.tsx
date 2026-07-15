@@ -16,9 +16,33 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const authorName = process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name';
+const authorTitle = process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer';
+const authorBio = process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '';
+const authorAvatar = process.env.NEXT_PUBLIC_AUTHOR_AVATAR;
+
+const title = `${authorName} — ${authorTitle}`;
+
 export const metadata: Metadata = {
-  title: `${process.env.NEXT_PUBLIC_AUTHOR_NAME ?? 'Your Name'} — ${process.env.NEXT_PUBLIC_AUTHOR_TITLE ?? 'Developer'}`,
-  description: process.env.NEXT_PUBLIC_AUTHOR_BIO ?? '',
+  title,
+  description: authorBio,
+  openGraph: {
+    title,
+    description: authorBio,
+    url: 'https://hongcheung.com',
+    siteName: authorName,
+    images: authorAvatar
+      ? [{ url: authorAvatar, width: 800, height: 800 }]
+      : [],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description: authorBio,
+    images: authorAvatar ? [authorAvatar] : [],
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +57,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
