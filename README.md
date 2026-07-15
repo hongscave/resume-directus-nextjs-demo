@@ -19,3 +19,6 @@ Directus
 
 ## Caveats
 - Directus returns date fields as ISO strings (e.g. "2026-07-14"), not Date objects, so string is the correct type.
+
+## Deploy 
+Deploy to CloudFlare Pages.
