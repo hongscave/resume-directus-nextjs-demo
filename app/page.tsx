@@ -5,7 +5,7 @@ import { ProjectsList, ProjectsSkeleton } from '@/components/ProjectsList';
 import { ExperienceList, ExperienceSkeleton } from '@/components/ExperienceList';
 import { SkillsList } from '@/components/SkillsList';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 export default function HomePage() {
   const allSkills = [
@@ -37,8 +37,8 @@ export default function HomePage() {
       <GetInTouchButton />
 
       <div className="flex flex-col gap-8 py-8 px-4 max-w-2xl mx-auto w-full">
-        <section aria-labelledby="projects-heading" className="mt-8">
-          <h2 id="projects-heading" className="text-xl font-semibold tracking-tight">Skills</h2>
+        <section aria-labelledby="skills-heading" className="mt-8">
+          <h2 id="skills-heading" className="text-xl font-semibold tracking-tight">Skills</h2>
           <div className="flex flex-wrap gap-3 mt-4">
               <SkillsList />
           </div>
