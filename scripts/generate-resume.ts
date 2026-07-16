@@ -204,7 +204,6 @@ article a { font-size: 10pt; }
   @page { margin: 2cm; }
   body { padding: 0; max-width: none; }
   a { text-decoration: none; }
-  a[href] { color: inherit; }
   section { page-break-inside: avoid; }
   .timeline li { page-break-inside: avoid; }
   article { page-break-inside: avoid; }
