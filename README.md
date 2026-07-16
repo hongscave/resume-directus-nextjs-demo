@@ -20,5 +20,8 @@ Directus
 ## Caveats
 - Directus returns date fields as ISO strings (e.g. "2026-07-14"), not Date objects, so string is the correct type.
 
+## Analytics
+- Built-in Umami Analytics integration, modify the environment variable to start tracking.
+
 ## Deploy 
 Deploy to CloudFlare Workers using npm run deploy

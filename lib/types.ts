@@ -8,6 +8,9 @@ export interface Project {
   urls: Record<string, string> | null;
   website: string | null;
   img: string | null;
+  imgAlt: string | null;
+  pinned: boolean;
+  sortOrder: number | null;
 }
 
 export interface Job {

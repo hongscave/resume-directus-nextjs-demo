@@ -17,12 +17,19 @@ export async function ProjectsList() {
     console.log(error)
   }
 
+  const sorted = [...allProjects].sort((a, b) => {
+    const aOrder = a.sortOrder ?? Infinity;
+    const bOrder = b.sortOrder ?? Infinity;
+    if (aOrder !== bOrder) return aOrder - bOrder;
+    return new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime();
+  });
+
   return (
     <>
-      {allProjects.length === 0 && (
+      {sorted.length === 0 && (
         <p className="text-muted text-sm">No projects yet.</p>
       )}
-      {allProjects.map((project) => (
+      {sorted.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
     </>

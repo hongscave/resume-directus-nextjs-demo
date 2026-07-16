@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { authorConfig, allSkills } from '@/lib/author';
+import { authorConfig, skillCategories } from '@/lib/author';
 import AuthorCard from '@/components/AuthorCard';
 import GetInTouchButton from '@/components/GetInTouchButton';
 import { ProjectsList, ProjectsSkeleton } from '@/components/ProjectsList';
@@ -18,7 +18,7 @@ export default function HomePage() {
     image: authorConfig.avatar,
     sameAs: ['https://bsky.app/profile/hongcheung.com'],
     jobTitle: authorConfig.title,
-    knowsAbout: allSkills,
+    knowsAbout: Object.values(skillCategories).flat(),
   };
 
   return (
@@ -27,13 +27,15 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <AuthorCard />
-      <GetInTouchButton />
+<AuthorCard />
+      <div className="flex flex-row items-center justify-center gap-4 py-2">
+        <GetInTouchButton />
+      </div>
 
-      <div className="flex flex-col gap-8 py-8 px-4 max-w-2xl mx-auto w-full">
+      <div className="flex flex-col gap-8 py-8 px-4 max-w-3xl mx-auto w-full">
         <section aria-labelledby="skills-heading" className="mt-8">
           <h2 id="skills-heading" className="text-xl font-semibold tracking-tight">Skills</h2>
-          <div className="flex flex-wrap gap-3 mt-4">
+          <div className="flex flex-col gap-3 mt-4">
               <SkillsList />
           </div>
         </section>

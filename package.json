@@ -10,7 +10,11 @@
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "export-resume-data": "tsx scripts/export-resume-data.ts",
+    "generate-resume": "tsx scripts/generate-resume.ts",
+    "convert-to-pdf": "tsx scripts/convert-to-pdf.ts",
+    "build:resume": "pnpm run export-resume-data && pnpm run generate-resume && pnpm run convert-to-pdf"
   },
   "dependencies": {
     "@directus/sdk": "^23.0.0",
@@ -24,9 +28,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^16.6.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "puppeteer-core": "^25.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.1",
     "typescript": "^5",
     "wrangler": "^4.111.0"
   }
