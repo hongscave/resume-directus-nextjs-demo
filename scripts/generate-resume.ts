@@ -58,13 +58,13 @@ function generateHtml() {
   const data = loadData();
   const { authorConfig, skillCategories: authorSkillCategories } = loadAuthor();
 
-  const flatFallback = Object.values(authorSkillCategories).flat();
+  const flatFallback: string[] = Object.values(authorSkillCategories).flat();
   const rawSkills = config.skills && typeof config.skills === 'object' && !Array.isArray(config.skills)
     ? (config.skills as Record<string, string[]>)
     : Array.isArray(config.skills) && config.skills.length
       ? { General: config.skills }
       : { General: flatFallback };
-  const skillCategories = Object.keys(rawSkills).length ? rawSkills : { General: flatFallback };
+  const skillCategories: Record<string, string[]> = Object.keys(rawSkills).length ? rawSkills : { General: flatFallback };
   const skillsHtml = Object.entries(skillCategories).map(([category, skills]) =>
     `<div class="skill-category"><span class="category-label">${escapeHtml(category)}</span><div class="tags">${skills.map((s) => `<span>${escapeHtml(s)}</span>`).join('')}</div></div>`
   ).join('');
