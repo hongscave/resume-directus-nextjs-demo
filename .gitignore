@@ -40,7 +40,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# ai
+# Resume PDF generator output
+/pdf/
+
+# Resume private data
+/scripts/resume.config.ts
+/scripts/resume-data.json
 /.kilo/
 /.playwright-mcp/
 # OpenNext
