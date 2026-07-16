@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import UmamiAnalytics from '@/components/UmamiAnalytics';
 import { authorConfig } from '@/lib/author';
 
 const geistSans = Geist({
@@ -17,6 +18,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const directusUrl = process.env.DIRECTUS_URL;
 const authorName = authorConfig.name;
 const authorFullName = authorConfig.fullName;
 const authorTitle = authorConfig.title;
@@ -61,8 +63,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
-        <link rel="preconnect" href="https://cms.hongct.com" />
-        <link rel="dns-prefetch" href="https://cms.hongct.com" />
+        <link rel="preconnect" href={directusUrl} />
+        <link rel="dns-prefetch" href={directusUrl} />
+        <UmamiAnalytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
