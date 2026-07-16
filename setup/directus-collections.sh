@@ -152,6 +152,45 @@ curl -s -X POST "$BASE/collections" \
         "schema": {
           "is_nullable": true
         }
+      },
+      {
+        "field": "imgAlt",
+        "type": "string",
+        "meta": {
+          "interface": "input",
+          "sort": 10,
+          "width": "full",
+          "note": "Alt text for the project thumbnail image"
+        },
+        "schema": {
+          "is_nullable": true
+        }
+      },
+      {
+        "field": "pinned",
+        "type": "boolean",
+        "meta": {
+          "interface": "boolean",
+          "sort": 11,
+          "width": "half",
+          "note": "Show pin icon on the project card"
+        },
+        "schema": {
+          "default_value": false
+        }
+      },
+      {
+        "field": "sortOrder",
+        "type": "integer",
+        "meta": {
+          "interface": "input",
+          "sort": 12,
+          "width": "half",
+          "note": "Lower = higher priority. Falls back to publishedDate desc."
+        },
+        "schema": {
+          "is_nullable": true
+        }
       }
     ]
   }' | python3 -m json.tool
