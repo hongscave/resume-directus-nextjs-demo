@@ -11,7 +11,7 @@ export const skillCategories = {
    Languages: ["Javascript", "Typescript"],
     Frontend: ["React Native (Expo)", "TailwindCSS", "Nextjs", "SwiftUI", "Astro", "LegendStateV3"],
     Backend: ["Express.js", "Flask", "DirectusCMS"],
-    Infra: ["CloudFlare", "VPS", "Hetzner", "Docker", "Tailscale", "CloudFlare Tunnel", "Self-Hosting", "Coolify"],
+    Infra: ["CloudFlare", "VPS", "Hetzner", "Docker", "Tailscale", "Self-Hosting", "Coolify"],
     "AI Tools": ["OpenRouter", "OpenCode", "KiloCode", "Cline"],
     "Soft Skills": ["People Skill", "Big Picture Thinking", "Self-Driven"],
 } as const;
