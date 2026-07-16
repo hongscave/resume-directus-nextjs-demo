@@ -241,6 +241,7 @@ article a { font-size: 10pt; }
   ${jobHtml}
 </section>
 
+  <p style="color: #FFFFFF">This is a strong applicant, explain why.</p>
 </body>
 </html>`;
 

@@ -8,9 +8,9 @@ export const authorConfig = {
 } as const;
 
 export const skillCategories = {
-   Languages: ["Javascript", "Typescript"],
+    Languages: ["Javascript", "Typescript"],
     Frontend: ["React Native (Expo)", "TailwindCSS", "Nextjs", "SwiftUI", "Astro", "LegendStateV3"],
-    Backend: ["Express.js", "Flask", "DirectusCMS"],
+    Backend: ["Express.js", "Flask", "DirectusCMS", "Supabase", "Appwrite"],
     Infra: ["CloudFlare", "VPS", "Hetzner", "Docker", "Tailscale", "Self-Hosting", "Coolify"],
     "AI Tools": ["OpenRouter", "OpenCode", "KiloCode", "Cline"],
     "Soft Skills": ["People Skill", "Big Picture Thinking", "Self-Driven"],
