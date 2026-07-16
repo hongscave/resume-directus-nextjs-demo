@@ -51,7 +51,7 @@ export default function AuthorCard() {
   const initials = authorConfig.initials;
 
   return (
-    <section className="flex flex-col sm:flex-row items-center sm:items-start gap-8 py-8 pt-20 px-4 max-w-2xl mx-auto">
+    <section className="flex flex-col sm:flex-row items-center sm:items-start gap-8 py-8 pt-20 px-4 max-w-3xl mx-auto">
       <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 bg-surface border border-border flex items-center justify-center text-2xl font-bold text-muted">
         {avatar ? (
           <Image
